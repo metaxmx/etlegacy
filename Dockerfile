@@ -32,8 +32,7 @@ RUN ( curl https://www.etlegacy.com/download/file/87 | tar xvz --strip-component
     && echo "set sv_allowDownload \"1\"" >> ${APP_HOME}/etmain/etl_server.cfg \
     && echo "set rconpassword \"etlegacy\"" >> ${APP_HOME}/etmain/etl_server.cfg \
     && mv ${APP_HOME}/etmain/etl_server.cfg ${APP_HOME}/etmain/etl_server_default.cfg \
-    && mkdir ${APP_HOME}/conf \
-    && chmod a+x entrypoint.sh
+    && mkdir ${APP_HOME}/conf
 
 # Port to expose
 EXPOSE 27960/udp

@@ -1,13 +1,16 @@
-# Docker Image: Enemy Territory Legacy (etlegacy)
+Docker Image: Enemy Territory Legacy (etlegacy)
+===============================================
 
 Docker container for ET: Legacy dedicated game server.
 
-## Run with default settings
+Run with default settings
+-------------------------
 
 Per default, the server is configured to run with the default name "ET Legacy Host" and the rcon password "etlegacy".  
 In order to start the server for a quick match, just create a new container (running in the background due to the `-d` parameter):
 
     docker run --name enemyterritory -p 27960:27960/udp -d metaxmx/etlegacy
+
 
 Once the server is created with a given name, it can be stopped, removed and restarted with the general docker commands:
 
@@ -24,7 +27,8 @@ Once the server is created with a given name, it can be stopped, removed and res
      docker rm -f enemyterritory
     
 
-## Run with custom server settings
+Run with custom server settings
+-------------------------------
 
 The server configuration is provided in a Docker Volume,
 so it can be edited and will be applied after the next restart of the server.
@@ -42,7 +46,9 @@ After the first start, the Enemy Territory server will provide the default confi
     vim /my/et/config/etl_server.cfg
     docker restart enemyterritory
 
-## Auto-Restart
+
+Auto-Restart
+------------
 
 If you want the game server to automatically restart, e.g. when the operating system is rebooted, add the parameter "restart=always" to the `docker run` command:
 
