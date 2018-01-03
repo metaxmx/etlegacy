@@ -9,7 +9,7 @@ Run with default settings
 Per default, the server is configured to run with the default name "ET Legacy Host" and the rcon password "etlegacy".  
 In order to start the server for a quick match, just create a new container (running in the background due to the `-d` parameter):
 
-    docker run --name enemyterritory -p 27960:27960/udp -d metaxmx/etlegacy
+    docker run --name enemyterritory -p 27960:27960/udp -d metax/etlegacy
 
 
 Once the server is created with a given name, it can be stopped, removed and restarted with the general docker commands:
@@ -41,7 +41,7 @@ After the first start, the Enemy Territory server will provide the default confi
 
     mkdir /my/et/config
     chmod a+w /my/et/config
-    docker run --name enemyterritory -p 27960:27960/udp -v /my/et/config:/opt/etlegacy/conf -d metaxmx/etlegacy
+    docker run --name enemyterritory -p 27960:27960/udp -v /my/et/config:/opt/etlegacy/conf -d metax/etlegacy
     # Make your changes
     vim /my/et/config/etl_server.cfg
     docker restart enemyterritory
@@ -52,5 +52,5 @@ Auto-Restart
 
 If you want the game server to automatically restart, e.g. when the operating system is rebooted, add the parameter "restart=always" to the `docker run` command:
 
-    docker run --name enemyterritory --restart=always -p 27960:27960/udp -d metaxmx/etlegacy
+    docker run --name enemyterritory --restart=always -p 27960:27960/udp -d metax/etlegacy
     
