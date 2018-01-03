@@ -26,7 +26,7 @@ USER ${APP_USER}
 WORKDIR ${APP_HOME}
 
 # Install Wolfenstein: Enemy Territory Legacy
-RUN curl https://www.etlegacy.com/download/file/87 | tar xvz; mv etlegacy-v2.75-x86_64 ${APP_HOME}
+RUN curl https://www.etlegacy.com/download/file/87 | tar xvz --strip-components=1
 RUN curl -o temp.exe http://trackbase.eu/files//et/full/WolfET_2_60b_custom.exe; 7z e temp.exe -o${APP_HOME}/etmain etmain/pak*.pk3; rm temp.exe
 RUN echo "set sv_allowDownload \"1\"" >> ${APP_HOME}/etmain/etl_server.cfg
 RUN echo "set rconpassword \"etlegacy\"" >> ${APP_HOME}/etmain/etl_server.cfg
