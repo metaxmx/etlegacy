@@ -1,4 +1,5 @@
-# etlegacy
+# Docker Image: Enemy Territoy Legacy (etlegacy)
+
 Docker container for ET: Legacy dedicated server
 
 This will provision an ET: Legacy server with a default RCON password of 'etlegacy'.
